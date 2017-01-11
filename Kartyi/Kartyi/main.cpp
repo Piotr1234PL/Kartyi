@@ -1,31 +1,35 @@
 #include <iostream>
-#include <cstdlib>
-#include <windows.h>
-#include <time.h>
+#include <string>
 using namespace std;
 
-int liczba;
+float oceny[5]; float suma = 0, srednia;
+int sizee = *(&oceny+ 1) - oceny;
 
-
-
-int main() {
-	srand(time(NULL));
-	cout << "Hello World" << endl;
-	/*for(int i = 15; i >= 0; i--) {
-		Sleep(500);
-		cout << i << endl;
-
-	}*/
-	liczba = rand() % 100 + 1;
-	cout << liczba << endl;
-
-	int pomiary[100][100];
-	for (int i = 0; i < 100; i++) {
-		for (int y = 0; y < 100; y++) {
-			pomiary[i][y] = rand() % 100 + 1;
-			cout << "Pomiar [" << i << "][" << y << "] = " << pomiary[i][y] << endl;
-		}
+int main(){
+	cout << "Podaj piêæ ocen:" << endl;
+	for (int i = 0; i < 5; i++) {
+		cin >> oceny[i];
+		suma = suma + oceny[i];
 	}
-	
+	for (int i = 0; i < 5; i++) {
+		cout << oceny[i] << " ";
+		
+	}
+	cout << endl;
+	cout << suma << endl;
+	srednia = suma / sizee;
+	cout << srednia<<endl;
+	string test;
+	cin >> test;
+	cout << test<<endl;
+	cout << "Druga litera tego slowa to " << test[1];
+
+
+
+
+
+
+
+
 	return 0;
 }
